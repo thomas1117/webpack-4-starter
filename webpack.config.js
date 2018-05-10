@@ -5,6 +5,8 @@ const WebpackAssetsManifest = require('webpack-assets-manifest');
 // due to webpack hashing issue
 const WebpackMd5Hash = require('webpack-md5-hash');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const env = process.env.NODE_ENV
 
 module.exports = (env, argv) => {
@@ -48,7 +50,11 @@ module.exports = (env, argv) => {
       extensions: ['*', '.js', '.vue'],
     },
     plugins: [ 
-      // new ExtractTextPlugin({filename: prod ? 'style.[hash].css' : 'style.css' }),
+      // new BrowserSyncPlugin({
+      //   host: 'localhost',
+      //   port: 8000,
+      //   proxy: 'http://localhost:8000/',
+      // }),
       new MiniCssExtractPlugin({
         filename: prod ? 'style.[contenthash].css' : 'style.css',
       }),
@@ -59,7 +65,7 @@ module.exports = (env, argv) => {
         writeToDisk: false,
         assets: {},
         replacer: require('./format'),
-      })
+      }),
     ],
     performance: { hints: false }
   }

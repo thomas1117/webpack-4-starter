@@ -17,6 +17,8 @@ var app = new Vue({
 	}
 });
 
+console.log('a')
+
 
 if (checkExists('test')) {
 	var test = new Vue({

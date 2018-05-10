@@ -33,6 +33,5 @@
 	<link rel="stylesheet" href="<?php echo 'dist/' . $css ?>">
 
 	<script src="<?php echo 'dist/' . $js ?>"></script>
-	<script src="<?php echo 'dist/' . 'bla.js' ?>"></script>
 </body>
 </html>

@@ -1,5 +1,5 @@
 <template>
-	<div class="modal" :class="{'fade show d-block': shown}" tabindex="-1" role="dialog">
+	<div id="m" class="modal" :class="{'fade in show d-block': shown}" tabindex="-1" role="dialog">
 	  <div class="modal-dialog" role="document">
 	    <div class="modal-content">
 	      <div class="modal-header">
@@ -29,6 +29,7 @@
 		},
 		mounted() {
 			$('body').addClass('modal-open');
+			$('#m').modal('show');
 		}
 	}
 </script>
